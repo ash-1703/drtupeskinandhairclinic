@@ -179,26 +179,32 @@ menuToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
 
 // tabs
-document.getElementById('tabs').addEventListener('click', e=>{
-  const btn = e.target.closest('.tab-btn');
-  if(!btn) return;
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const tab = btn.dataset.tab;
-  document.querySelectorAll('.service-panel').forEach(p=>{
-    p.classList.toggle('active', p.dataset.panel === tab);
+const tabsEl = document.getElementById('tabs');
+if(tabsEl){
+  tabsEl.addEventListener('click', e=>{
+    const btn = e.target.closest('.tab-btn');
+    if(!btn) return;
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.service-panel').forEach(p=>{
+      p.classList.toggle('active', p.dataset.panel === tab);
+    });
   });
-});
+}
 
 // faq accordion
-document.getElementById('faqList').addEventListener('click', e=>{
-  const q = e.target.closest('.faq-q');
-  if(!q) return;
-  const item = q.closest('.faq-item');
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!wasOpen) item.classList.add('open');
-});
+const faqListEl = document.getElementById('faqList');
+if(faqListEl){
+  faqListEl.addEventListener('click', e=>{
+    const q = e.target.closest('.faq-q');
+    if(!q) return;
+    const item = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+}
 
 // scroll reveal
 const revealEls = document.querySelectorAll('.reveal');
@@ -206,3 +212,87 @@ const io = new IntersectionObserver(entries=>{
   entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in'); });
 },{threshold:0.15});
 revealEls.forEach(el=>io.observe(el));
+
+// header shadow once the page scrolls
+const siteHeader = document.querySelector('header');
+if(siteHeader){
+  const updateHeaderShadow = ()=> siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+  updateHeaderShadow();
+  window.addEventListener('scroll', updateHeaderShadow, {passive:true});
+}
+
+// lazy images: fade in once actually loaded (skip if reduced-motion)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){
+  document.querySelectorAll('img[loading="lazy"]').forEach(img=>{
+    const markLoaded = ()=> img.classList.add('is-loaded');
+    if(img.complete) markLoaded();
+    else img.addEventListener('load', markLoaded, {once:true});
+  });
+}
+
+// animated counting stat numbers (hero stats + "why choose us" numbers)
+const counterEls = document.querySelectorAll('.stat .num, .why-item .num');
+if(counterEls.length && !prefersReducedMotion){
+  const countIO = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting) return;
+      countIO.unobserve(en.target);
+      const el = en.target;
+      const raw = el.textContent.trim();
+      const match = raw.match(/^([\d,]*\.?\d+)(.*)$/);
+      if(!match){ return; }
+      const [, numStr, suffix] = match;
+      const target = parseFloat(numStr.replace(/,/g,''));
+      const isDecimal = numStr.includes('.');
+      const hasCommas = numStr.includes(',');
+      const duration = 1200;
+      const start = performance.now();
+      const tick = now=>{
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = target * eased;
+        const shown = isDecimal ? current.toFixed(1) : Math.round(current).toLocaleString(hasCommas ? 'en-IN' : undefined);
+        el.textContent = shown + suffix;
+        if(progress < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      };
+      requestAnimationFrame(tick);
+    });
+  },{threshold:0.4});
+  counterEls.forEach(el=>countIO.observe(el));
+}
+
+// clinic photo carousel (gallery.html)
+const carouselEl = document.getElementById('clinicCarousel');
+if(carouselEl){
+  const slides = [...carouselEl.querySelectorAll('.carousel-slide')];
+  const dots = [...carouselEl.querySelectorAll('.carousel-dot')];
+  let current = slides.findIndex(s=>s.classList.contains('is-active'));
+  if(current < 0) current = 0;
+  let timer = null;
+
+  const goTo = index=>{
+    slides[current].classList.remove('is-active');
+    dots[current]?.classList.remove('is-active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current]?.classList.add('is-active');
+  };
+  const next = ()=> goTo(current + 1);
+  const stopAutoplay = ()=>{ if(timer) clearInterval(timer); timer = null; };
+  const startAutoplay = ()=>{
+    if(prefersReducedMotion || slides.length < 2) return;
+    stopAutoplay();
+    timer = setInterval(next, 3000);
+  };
+
+  carouselEl.querySelector('.carousel-next')?.addEventListener('click', ()=>{ next(); startAutoplay(); });
+  carouselEl.querySelector('.carousel-prev')?.addEventListener('click', ()=>{ goTo(current - 1); startAutoplay(); });
+  dots.forEach((dot, i)=> dot.addEventListener('click', ()=>{ goTo(i); startAutoplay(); }));
+
+  carouselEl.addEventListener('mouseenter', stopAutoplay);
+  carouselEl.addEventListener('mouseleave', startAutoplay);
+
+  startAutoplay();
+}

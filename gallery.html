@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN3M9ZSSB7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RN3M9ZSSB7');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — Dr. Tupe's Skin &amp; Hair Clinic</title>
@@ -28,7 +37,7 @@
       </a>
       <nav class="links" id="navLinks">
         <a href="index.html#about">About</a>
-        <a href="index.html#doctors">Doctors &amp; Clinics</a>
+        <a href="index.html#doctors">Doctors</a>
         <a href="index.html#services">Services</a>
         <a href="gallery.html" style="color: var(--pine); font-weight: 700">Gallery</a>
         <a href="index.html#testimonials">Testimonials</a>
@@ -52,7 +61,7 @@
     <!-- PAGE HERO -->
     <section class="hero" id="home" style="padding-bottom: 40px">
       <div class="wrap hero-grid hero-grid-single">
-        <div>
+        <div class="reveal">
           <div class="eyebrow">Gallery</div>
           <h1>See the space, the treatments, and real results.</h1>
           <p class="sub">
@@ -67,7 +76,7 @@
     <!-- INSTAGRAM FEED -->
     <section id="instagram-feed" style="background: var(--bg-alt)">
       <div class="wrap">
-        <div class="services-head">
+        <div class="services-head reveal">
           <div class="eyebrow">Live from Instagram</div>
           <h2>Straight from our feed.</h2>
           <p>
@@ -86,42 +95,54 @@
     <!-- CLINIC GALLERY -->
     <section id="gallery">
       <div class="wrap">
-        <div class="services-head">
+        <div class="services-head reveal">
           <div class="eyebrow">Inside the Clinic</div>
           <h2>A look at our space.</h2>
         </div>
-        <div class="gallery-grid">
-          <div class="g-item has-img">
-            <img src="images/clinicreception.png"
-              alt="Dr. Tupe's Skin, Hair &amp; clinic reception, Bhandup West, Mumbai" loading="lazy" />
+        <div class="carousel reveal" id="clinicCarousel">
+          <div class="carousel-track">
+            <div class="carousel-slide is-active">
+              <img src="images/clinicreception.png"
+                alt="Dr. Tupe's Skin &amp; Hair Clinic reception, Bhandup West, Mumbai" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/treatmentroom.png" alt="Treatment room at Dr. Tupe's Clinic" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/clinic_.png" alt="Inside Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/with_patient_.png" alt="Dr. Tupe with a patient" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/treatment_room.png" alt="Laser equipment at Dr. Tupe's Clinic" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/clinic1_.png" alt="Dr. Tupe's Clinic interior" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/consultationarea.png" alt="Consultation area at Dr. Tupe's Clinic" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/clinic2.png" alt="Dr. Tupe's Clinic space" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/clinic-exterior.webp"
+                alt="Dr. Tupe's Skin, Hair &amp; Laser Clinic exterior, Bhandup West, Mumbai" loading="lazy" />
+            </div>
           </div>
-          <div class="g-item has-img">
-            <img src="images/treatmentroom.png" alt="Dr. Tupe's Skin, Hair &amp; treatment room, Bhandup West, Mumbai"
-              loading="lazy" />
-          </div>
-          <div class="g-item has-img wide">
-            <img src="images/keloid.png" alt="Before and after keloid removal results at Dr. Tupe's Clinic"
-              loading="lazy" />
-          </div>
-          <div class="g-item has-img">
-            <img src="images/with_patient.png" alt="Dr. Tupe's Skin, Hair &amp; consultaiion area, Bhandup West, Mumbai"
-              loading="lazy" />
-          </div>
-          <div class="g-item has-img">
-            <img src="images/laser_equipment.png"
-              alt="Dr. Tupe's Skin, Hair &amp; laser equipment, Bhandup West, Mumbai" loading="lazy" />
-          </div>
-          <div class="g-item has-img wide">
-            <img src="images/hair.png" alt="Before and after hair treatment results at Dr. Tupe's Clinic"
-              loading="lazy" />
-          </div>
-          <div class="g-item has-img">
-            <img src="images/consultationarea.png"
-              alt="Dr. Tupe's Skin, Hair &amp; consultaiion area, Bhandup West, Mumbai" loading="lazy" />
-          </div>
-          <div class="g-item has-img">
-            <img src="images/clinic-exterior.webp"
-              alt="Dr. Tupe's Skin, Hair &amp; Laser Clinic exterior, Bhandup West, Mumbai" loading="lazy" />
+          <button class="carousel-arrow carousel-prev" aria-label="Previous photo">‹</button>
+          <button class="carousel-arrow carousel-next" aria-label="Next photo">›</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot is-active" aria-label="Go to photo 1"></button>
+            <button class="carousel-dot" aria-label="Go to photo 2"></button>
+            <button class="carousel-dot" aria-label="Go to photo 3"></button>
+            <button class="carousel-dot" aria-label="Go to photo 4"></button>
+            <button class="carousel-dot" aria-label="Go to photo 5"></button>
+            <button class="carousel-dot" aria-label="Go to photo 6"></button>
+            <button class="carousel-dot" aria-label="Go to photo 7"></button>
+            <button class="carousel-dot" aria-label="Go to photo 8"></button>
+            <button class="carousel-dot" aria-label="Go to photo 9"></button>
           </div>
         </div>
       </div>
@@ -139,7 +160,7 @@
         </p>
       </div>
       <div>
-        <div class="eyebrow" style="color: #f4cfdb">Find Us Online</div>
+        <div class="eyebrow" style="color: #e8d5a0">Find Us Online</div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px">
           <a href="https://www.instagram.com/dr_tupe_skin_and_hair_clinic/" target="_blank" rel="noopener"
             class="btn btn-outline" style="border-color: rgba(255, 255, 255, 0.3); color: #fff">Instagram</a>

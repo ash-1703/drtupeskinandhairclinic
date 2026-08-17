@@ -1,17 +1,20 @@
 
   :root{
-    --bg:#FDF5F7;
-    --bg-alt:#F8E4E9;
+    --bg:#FAF7F0;
+    --bg-alt:#E9F3F1;
     --panel:#FFFFFF;
-    --ink:#3E2733;
-    --ink-soft:#7C6169;
-    --pine:#C6607F;
-    --pine-deep:#7A3350;
-    --pine-light:#E8B9C6;
-    --clay:#E0916B;
+    --ink:#16302E;
+    --ink-soft:#5E7876;
+    --pine:#14807A;
+    --pine-deep:#0B4A44;
+    --pine-light:#A9D8D1;
+    --clay:#C98A3E;
     --gold:#C9A15A;
-    --line:#F2D9E0;
-    --shadow: 0 20px 40px -24px rgba(122,51,80,0.18);
+    --line:#DCEAE7;
+    --section-bg:#F1F7F5;
+    --text-muted:#5E7876;
+    --text-dark:#16302E;
+    --shadow: 0 20px 40px -24px rgba(11,74,68,0.18);
     --radius: 18px;
     --maxw: 1180px;
   }
@@ -119,7 +122,7 @@
     position:relative; overflow:hidden;
     padding:80px 0 60px;
     background:
-      radial-gradient(circle at 85% 10%, rgba(198,96,127,0.10), transparent 45%),
+      radial-gradient(circle at 85% 10%, rgba(20,128,122,0.10), transparent 45%),
       var(--bg);
   }
   .hero-grid{
@@ -219,6 +222,7 @@
   }
   a.press-card:hover{transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.12);}
   .press-card img{width:100%; height:auto; display:block;}
+  .award-photo img{aspect-ratio:4/5; object-fit:cover; height:100%;}
   .press-card-label{
     font-family:'Space Grotesk'; font-size:0.78rem; font-weight:600; color:var(--pine-deep);
     padding:12px 14px; border-top:1px solid var(--line);
@@ -533,20 +537,34 @@
   }
 }
 
-  /* ---------- GALLERY ---------- */
-  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:260px; gap:14px;}
-  @media (max-width:800px){ .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:200px;} }
-  .g-item{
-    border-radius:14px; background:var(--bg-alt); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; text-align:center; padding:10px;
-    font-size:0.78rem; color:var(--pine-light); font-family:'Space Grotesk';
-    overflow:hidden; position:relative;
+  /* ---------- CLINIC PHOTO CAROUSEL ---------- */
+  .carousel{
+    position:relative; max-width:900px; margin:0 auto; border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow); aspect-ratio:16/10; background:var(--bg-alt);
   }
-  .g-item.has-img{padding:0;}
-  .g-item.has-img img{width:100%; height:100%; object-fit:cover; display:block;}
-  .g-item.wide{grid-column:span 2;}
-  .g-item.wide img{object-fit:contain; background:#fff;}
-  @media (max-width:800px){ .g-item.wide{grid-column:span 2;} }
+  .carousel-track{position:relative; width:100%; height:100%;}
+  .carousel-slide{position:absolute; inset:0; opacity:0; transition:opacity .8s ease;}
+  .carousel-slide.is-active{opacity:1;}
+  .carousel-slide img{width:100%; height:100%; object-fit:cover; display:block;}
+  .carousel-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:50%;
+    background:rgba(255,255,255,0.85); border:none; color:var(--pine-deep); font-size:1.4rem; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease, transform .2s ease; z-index:2;
+  }
+  .carousel-arrow:hover{background:#fff; transform:translateY(-50%) scale(1.08);}
+  .carousel-prev{left:16px;}
+  .carousel-next{right:16px;}
+  .carousel-dots{position:absolute; left:0; right:0; bottom:14px; display:flex; justify-content:center; gap:8px; z-index:2;}
+  .carousel-dot{
+    width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.55); border:none;
+    cursor:pointer; padding:0; transition:background .2s ease, transform .2s ease;
+  }
+  .carousel-dot.is-active{background:#fff; transform:scale(1.3);}
+  @media (max-width:700px){
+    .carousel{aspect-ratio:4/5;}
+    .carousel-arrow{width:34px; height:34px; font-size:1.2rem;}
+  }
 
   /* ---------- FAQ ---------- */
   .faq-list{max-width:760px; margin:0 auto;}
@@ -585,11 +603,11 @@
     padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.2);
   }
   .contact-head{max-width:none; margin:0 0 36px; text-align:left;}
-  .contact-head .eyebrow{justify-content:flex-start; color:#F4CFDB;}
-  .contact-head .eyebrow::before{background:#F4CFDB;}
+  .contact-head .eyebrow{justify-content:flex-start; color:#E8D5A0;}
+  .contact-head .eyebrow::before{background:#E8D5A0;}
   .contact-head h2{color:#fff; text-align:left;}
   #contact .info-row{border-color:rgba(255,255,255,0.15);}
-  #contact .info-row h4{color:#F4CFDB;}
+  #contact .info-row h4{color:#E8D5A0;}
   #contact .info-row p{color:rgba(255,255,255,0.85);}
 
   /* ---------- FOOTER ---------- */
@@ -603,5 +621,59 @@
     font-size:0.78rem; color:rgba(255,255,255,0.5); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
   }
 
-  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);}
   .reveal.in{opacity:1; transform:none;}
+
+  /* ---------- INTERACTIONS & MICRO-ANIMATIONS ---------- */
+
+  /* staggered reveal for grid children — add .stagger to the grid container */
+  .stagger > .reveal:nth-child(1){transition-delay:.03s;}
+  .stagger > .reveal:nth-child(2){transition-delay:.09s;}
+  .stagger > .reveal:nth-child(3){transition-delay:.15s;}
+  .stagger > .reveal:nth-child(4){transition-delay:.21s;}
+  .stagger > .reveal:nth-child(5){transition-delay:.27s;}
+  .stagger > .reveal:nth-child(6){transition-delay:.33s;}
+  .stagger > .reveal:nth-child(7){transition-delay:.39s;}
+  .stagger > .reveal:nth-child(8){transition-delay:.45s;}
+  .stagger > .reveal:nth-child(n+9){transition-delay:.5s;}
+
+  /* photo zoom-on-hover — add .zoom-hover to any overflow:hidden image container */
+  .zoom-hover{overflow:hidden;}
+  .zoom-hover img{transition:transform .6s cubic-bezier(.22,1,.36,1);}
+  .zoom-hover:hover img{transform:scale(1.07);}
+
+  /* buttons: lift + press feedback */
+  .btn{transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(0,0,0,0.22);}
+  .btn:active{transform:translateY(0) scale(.97); box-shadow:none;}
+  .card-banner.has-img{transition:box-shadow .3s ease;}
+
+  /* nav links: animated underline */
+  nav.links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px;
+    background:var(--clay); border-radius:2px; transform:scaleX(0); transform-origin:left;
+    transition:transform .3s cubic-bezier(.65,0,.35,1);
+  }
+  nav.links a:hover::after{transform:scaleX(1);}
+
+  /* tab buttons: smoother state change */
+  .tab-btn{transition:background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;}
+  .tab-btn:hover{transform:translateY(-2px);}
+  .tab-btn.active{transform:none;}
+
+  /* sticky header: shadow once page scrolls */
+  header{transition:box-shadow .3s ease, background .3s ease;}
+  header.scrolled{box-shadow:0 8px 24px -12px rgba(0,0,0,0.15);}
+
+  /* faq: subtle hover affordance */
+  .faq-q{transition:color .2s ease;}
+  .faq-q:hover{color:var(--pine);}
+
+  /* image fade-in once loaded, so lazy images don't pop in abruptly */
+  img[loading="lazy"]{transition:opacity .5s ease;}
+  img[loading="lazy"]:not(.is-loaded){opacity:0;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1 !important; transform:none !important; transition:none !important;}
+    .zoom-hover img, .btn, .tab-btn, nav.links a::after, header{transition:none !important;}
+  }
