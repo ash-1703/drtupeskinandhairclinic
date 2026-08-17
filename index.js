@@ -2,7 +2,7 @@
 const translations = {
   en: {
     brand_sub:"Bhandup West, Mumbai",
-    nav_about:"About", nav_services:"Services", nav_gallery:"Gallery", nav_testimonials:"Testimonials", nav_contact:"Contact", nav_call:"Call",
+    nav_about:"About Us", nav_services:"Services", nav_gallery:"Gallery", nav_testimonials:"Testimonials", nav_contact:"Contact", nav_call:"Call",
     hero_eyebrow:"Bhandup West, Mumbai · 25+ years of trusted care",
     hero_title:"Confident skin. Healthy hair. Real, lasting results.",
     hero_sub:"Dr. Pratima Tupe is a cosmetologist, trichologist and nutritionist who has helped thousands of patients across Mumbai with personalised skin, hair, laser and slimming treatments.",
@@ -179,19 +179,78 @@ menuToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
 
 // tabs
+function activateServiceTab(tab){
+  const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+  const panel = document.querySelector(`.service-panel[data-panel="${tab}"]`);
+  if(!btn || !panel) return false;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.service-panel').forEach(p=>p.classList.remove('active'));
+  panel.classList.add('active');
+  return true;
+}
 const tabsEl = document.getElementById('tabs');
 if(tabsEl){
   tabsEl.addEventListener('click', e=>{
     const btn = e.target.closest('.tab-btn');
     if(!btn) return;
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab = btn.dataset.tab;
-    document.querySelectorAll('.service-panel').forEach(p=>{
-      p.classList.toggle('active', p.dataset.panel === tab);
-    });
+    activateServiceTab(btn.dataset.tab);
   });
 }
+
+// skin panel sub-tabs: Skin Treatment / Cosmetic Treatment
+const skinSubTabs = document.getElementById('skinSubTabs');
+function activateSkinSubTab(subtab){
+  if(!skinSubTabs) return false;
+  const btn = skinSubTabs.querySelector(`.sub-tab-btn[data-subtab="${subtab}"]`);
+  if(!btn) return false;
+  skinSubTabs.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[data-panel="skin"] .card[data-subcat]').forEach(card=>{
+    card.classList.toggle('is-hidden', card.dataset.subcat !== subtab);
+  });
+  return true;
+}
+if(skinSubTabs){
+  skinSubTabs.addEventListener('click', e=>{
+    const btn = e.target.closest('.sub-tab-btn');
+    if(!btn) return;
+    activateSkinSubTab(btn.dataset.subtab);
+  });
+  activateSkinSubTab(skinSubTabs.querySelector('.sub-tab-btn.active').dataset.subtab);
+}
+
+// nav "Services" dropdown — jump straight to a category tab (and sub-tab, for Skin)
+document.querySelectorAll('[data-tab-link]').forEach(link=>{
+  link.addEventListener('click', e=>{
+    const servicesSection = document.getElementById('services');
+    if(!servicesSection) return; // different page — let the href navigate there normally
+    e.preventDefault();
+    activateServiceTab(link.dataset.tabLink);
+    if(link.dataset.subtabLink) activateSkinSubTab(link.dataset.subtabLink);
+    servicesSection.scrollIntoView({behavior: prefersReducedMotion ? 'auto' : 'smooth', block:'start'});
+    history.replaceState(null, '', link.getAttribute('href'));
+  });
+});
+
+// deep link support: #services-skin(-treatment) / #services-cosmetic-treatment / #services-hair / #services-laser / #services-slim
+(function(){
+  const hash = window.location.hash;
+  const subtabMatch = hash.match(/^#services-(skin-treatment|cosmetic-treatment)$/);
+  const tabMatch = hash.match(/^#services-(skin|hair|laser|slim)$/);
+  let activated = false;
+  if(subtabMatch){
+    activated = activateServiceTab('skin');
+    activateSkinSubTab(subtabMatch[1]);
+  } else if(tabMatch){
+    activated = activateServiceTab(tabMatch[1]);
+  }
+  if(activated){
+    window.addEventListener('load', ()=>{
+      document.getElementById('services')?.scrollIntoView({block:'start'});
+    });
+  }
+})();
 
 // faq accordion
 const faqListEl = document.getElementById('faqList');
@@ -210,8 +269,17 @@ if(faqListEl){
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries=>{
   entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in'); });
-},{threshold:0.15});
+},{threshold:0.05, rootMargin:'0px 0px -10% 0px'});
 revealEls.forEach(el=>io.observe(el));
+// safety net: on very short/unusual viewports an element can sit just outside any
+// triggered intersection (e.g. taller than the viewport) — force it visible after a beat
+// so nothing gets permanently stuck at opacity:0.
+setTimeout(()=>{
+  revealEls.forEach(el=>{
+    const r = el.getBoundingClientRect();
+    if(r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+  });
+}, 1200);
 
 // header shadow once the page scrolls
 const siteHeader = document.querySelector('header');

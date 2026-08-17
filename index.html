@@ -36,9 +36,17 @@
         </span>
       </a>
       <nav class="links" id="navLinks">
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#doctors">Doctors</a>
-        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#doctors" data-i18n="nav_about">About Us</a>
+        <div class="nav-item-dropdown">
+          <a href="#services" data-i18n="nav_services">Services</a>
+          <div class="dropdown-menu">
+            <a href="#services-skin-treatment" data-tab-link="skin" data-subtab-link="skin-treatment">Skin Treatment</a>
+            <a href="#services-cosmetic-treatment" data-tab-link="skin" data-subtab-link="cosmetic-treatment">Cosmetic Treatment</a>
+            <a href="#services-hair" data-tab-link="hair" data-i18n="tab_hair">Hair</a>
+            <a href="#services-laser" data-tab-link="laser" data-i18n="tab_laser">Laser</a>
+            <a href="#services-slim" data-tab-link="slim" data-i18n="tab_slim">Slimming</a>
+          </div>
+        </div>
         <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
         <a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -271,8 +279,12 @@
         </div>
 
         <div class="service-panel active" data-panel="skin">
+          <div class="sub-tabs" id="skinSubTabs">
+            <button class="sub-tab-btn active" data-subtab="skin-treatment">Skin Treatment</button>
+            <button class="sub-tab-btn" data-subtab="cosmetic-treatment">Cosmetic Treatment</button>
+          </div>
           <div class="cards-grid stagger">
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/acne.png" alt="Acne treatment at Dr. Tupe's Clinic" />
               </div>
@@ -281,7 +293,7 @@
                 <p>Targeted treatment for active breakouts and inflammation.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/acne_scar.png" alt="Acne scar treatment at Dr. Tupe's Clinic" />
               </div>
@@ -290,7 +302,7 @@
                 <p>Advanced resurfacing to smooth and reduce acne scarring.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/pigmentation.png" alt="Pigmentation treatment at Dr. Tupe's Clinic" />
 
@@ -302,7 +314,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/ear_piercing.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -313,7 +325,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/ear_stitching_.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -326,7 +338,7 @@
               </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/peels.png" alt="Chemical peels at Dr. Tupe's Clinic" />
 
@@ -338,7 +350,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/eczema.png" alt="Eczema treatment at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -347,7 +359,7 @@
                 <p>Ongoing management for chronic skin conditions.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/keloid.png" alt="Keloid cryotherapy at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -356,7 +368,7 @@
                 <p>Freezing therapy to flatten and reduce stubborn keloid scars.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/fungal_infection.png" alt="Fungal infection treatment at Dr. Tupe's Clinic"
                   loading="lazy" />
@@ -366,7 +378,7 @@
                 <p>Fast, effective care for stubborn fungal skin issues.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/wart_removal.png" alt="Mole and wart removal at Dr. Tupe's Clinic" />
 
@@ -376,7 +388,7 @@
                 <p>Safe, minimally-invasive removal of moles, warts and skin growths.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/xanthelasma_.png" alt="Xanthelasma removal at Dr. Tupe's Clinic" />
               </div>
@@ -385,7 +397,7 @@
                 <p>Removal of yellowish cholesterol deposits around the eyelids.</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/oxygeno.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -397,7 +409,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/medifacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -409,7 +421,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/hydrafacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -421,7 +433,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/photofacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -433,7 +445,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/gfcfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -444,7 +456,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/diamondfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -455,7 +467,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/carbon_laser_.png" alt="Carbon laser peel at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -464,7 +476,7 @@
                 <p>Deep-cleansing "carbon peel" for pores, oil and dull skin</p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/omegaletlightfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -476,7 +488,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/pumpkinpeelfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -488,7 +500,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/acnelaserfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -500,7 +512,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/koreanglassfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -511,7 +523,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/mandelicpeel.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -522,7 +534,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/antiaging.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -533,7 +545,7 @@
                 </p>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/citruspeel.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
@@ -545,7 +557,7 @@
               </div>
             </div>
 
-            <div class="card reveal">
+            <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
                 <img src="images/vampirefacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
               </div>
