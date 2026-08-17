@@ -18,9 +18,11 @@
     content="Dr. Pratima Tupe's Skin, Hair, Laser &amp; Slimming Clinic in Bhandup West, Mumbai. 31+ years of trusted dermatology, trichology and cosmetology care. Walk-ins welcome." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="images/logo.webp" as="image" type="image/webp" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -28,7 +30,7 @@
   <header>
     <div class="nav">
       <a href="#home" class="brand">
-        <img class="brand-mark" src="images/logo.png" alt="Dr. Tupe's Aesthetic Clinic logo" />
+        <img loading="eager" decoding="async" class="brand-mark" src="images/logo.webp" alt="Dr. Tupe's Aesthetic Clinic logo" width="46" height="46" fetchpriority="high" decoding="async" />
         <span>
           <span class="brand-full">Dr. Tupe's Skin &amp; Hair Clinic</span>
           <span class="brand-short">Dr Tupe's</span>
@@ -48,6 +50,7 @@
           </div>
         </div>
         <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
         <a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
@@ -110,13 +113,13 @@
     <section id="doctors" class="doctors">
       <div class="wrap">
         <div class="services-head reveal">
-          <div class="eyebrow">Our Team</div>
-          <h2>Two clinics, one family of care.</h2>
+          <div class="eyebrow" data-i18n="doctors_eyebrow">Our Team</div>
+          <h2 data-i18n="doctors_title">Two clinics, one family of care.</h2>
         </div>
 
         <div class="team-grid">
           <div class="team-photo zoom-hover reveal">
-            <img src="images/dr_tupes.png" alt="Dr. Pratima Tupe and Dr. Sambhaji Tupe" loading="lazy" />
+            <img src="images/dr_tupes.webp" alt="Dr. Pratima Tupe and Dr. Sambhaji Tupe" loading="lazy" decoding="async" />
           </div>
           <div class="doctor-info reveal">
             <h3 class="eyebrow" data-i18n="about_eyebrow">
@@ -210,9 +213,9 @@
     <section id="press" style="background: var(--bg-alt)">
       <div class="wrap">
         <div class="services-head reveal">
-          <div class="eyebrow">In The News</div>
-          <h2>Press &amp; recognition.</h2>
-          <p>
+          <div class="eyebrow" data-i18n="press_eyebrow">In The News</div>
+          <h2 data-i18n="press_title">Press &amp; recognition.</h2>
+          <p data-i18n="press_sub">
             Featured in Mid-Day's Top 10 Emerging &amp; Promising Women
             Entrepreneurs of 2023, and recognised for our work in skin &amp;
             hair care.
@@ -220,23 +223,21 @@
         </div>
         <div class="press-grid stagger">
           <div class="press-card reveal zoom-hover">
-            <img src="images/midday.png" alt="Mid-Day feature: Top 10 Emerging & Promising Women Entrepreneurs of 2023"
-              loading="lazy" />
+            <img src="images/midday.webp" alt="Mid-Day feature: Top 10 Emerging & Promising Women Entrepreneurs of 2023"
+              loading="lazy" decoding="async" />
             <span class="press-card-label">Mid-Day — Top 10 Women Entrepreneurs of 2023</span>
           </div>
-          <a class="press-card reveal zoom-hover"
-            href="https://www.mid-day.com/brand-media/article/top-promising-doctors-in-their-respective-fields"
-            target="_blank" rel="noopener">
-            <img src="images/midday1.png" alt="Mid-Day feature: Top Promising Doctors In Their Respective Fields 2023"
-              loading="lazy" />
+          <div class="press-card reveal zoom-hover">
+            <img src="images/midday1.webp" alt="Mid-Day feature: Top Promising Doctors In Their Respective Fields 2023"
+              loading="lazy" decoding="async" />
             <span class="press-card-label">Mid-Day — Top Promising Doctors of 2023 →</span>
-          </a>
+          </div>
           <div class="press-card reveal zoom-hover award-photo">
-            <img src="images/award.png" alt="Award recognition for Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" />
+            <img src="images/award.webp" alt="Award recognition for Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" decoding="async" />
             <!-- <span class="press-card-label">Award Recognition</span> -->
           </div>
           <div class="press-card reveal zoom-hover award-photo">
-            <img src="images/award1.png" alt="Award recognition for Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" />
+            <img src="images/award1.webp" alt="Award recognition for Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" decoding="async" />
             <!-- <span class="press-card-label">Award Recognition</span> -->
           </div>
         </div>
@@ -286,25 +287,27 @@
           <div class="cards-grid stagger">
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/acne.png" alt="Acne treatment at Dr. Tupe's Clinic" />
+                <img loading="lazy" decoding="async" src="images/acne.webp" alt="Acne treatment at Dr. Tupe's Clinic" />
               </div>
               <div class="card-body">
                 <h3>Acne</h3>
                 <p>Targeted treatment for active breakouts and inflammation.</p>
+                <button type="button" class="learn-more" data-modal-open="acne">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/acne_scar.png" alt="Acne scar treatment at Dr. Tupe's Clinic" />
+                <img loading="lazy" decoding="async" src="images/acne_scar.webp" alt="Acne scar treatment at Dr. Tupe's Clinic" />
               </div>
               <div class="card-body">
                 <h3>Acne Scars</h3>
                 <p>Advanced resurfacing to smooth and reduce acne scarring.</p>
+                <button type="button" class="learn-more" data-modal-open="acne-scars">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/pigmentation.png" alt="Pigmentation treatment at Dr. Tupe's Clinic" />
+                <img loading="lazy" decoding="async" src="images/pigmentation.webp" alt="Pigmentation treatment at Dr. Tupe's Clinic" />
 
               </div>
               <div class="card-body">
@@ -312,22 +315,24 @@
                 <p>
                   Even out tone and reduce dark patches with customised plans.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="pigmentation">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/ear_piercing.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/ear_piercing.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Disposable Earlobe Piercing Units</h3>
                 <p>
                   a body modification creating a hole in the earlobe or cartilage to insert jewelry
                 </p>
+                <button type="button" class="learn-more" data-modal-open="earlobe-piercing">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/ear_stitching_.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/ear_stitching_.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Earlobe Stitched</h3>
@@ -335,12 +340,13 @@
                   a minor, 30-minute outpatient procedure used to mend torn, split, or stretched earlobes caused by
                   heavy earrings or gauges
                 </p>
+                <button type="button" class="learn-more" data-modal-open="earlobe-stitched">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
 
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/peels.png" alt="Chemical peels at Dr. Tupe's Clinic" />
+                <img loading="lazy" decoding="async" src="images/peels.webp" alt="Chemical peels at Dr. Tupe's Clinic" />
 
               </div>
               <div class="card-body">
@@ -348,58 +354,64 @@
                 <p>
                   Refresh skin texture and radiance with medical-grade peels.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="chemical-peels">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/eczema.png" alt="Eczema treatment at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/eczema.webp" alt="Eczema treatment at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Eczema &amp; Psoriasis Care</h3>
                 <p>Ongoing management for chronic skin conditions.</p>
+                <button type="button" class="learn-more" data-modal-open="eczema-psoriasis">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/keloid.png" alt="Keloid cryotherapy at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/keloid.webp" alt="Keloid cryotherapy at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Cryotherapy for Keloid </h3>
                 <p>Freezing therapy to flatten and reduce stubborn keloid scars.</p>
+                <button type="button" class="learn-more" data-modal-open="cryotherapy-keloid">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/fungal_infection.png" alt="Fungal infection treatment at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/fungal_infection.webp" alt="Fungal infection treatment at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Fungal Infections</h3>
                 <p>Fast, effective care for stubborn fungal skin issues.</p>
+                <button type="button" class="learn-more" data-modal-open="fungal-infections">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/wart_removal.png" alt="Mole and wart removal at Dr. Tupe's Clinic" />
+                <img loading="lazy" decoding="async" src="images/wart_removal.webp" alt="Mole and wart removal at Dr. Tupe's Clinic" />
 
               </div>
               <div class="card-body">
                 <h3>Mole Removal</h3>
                 <p>Safe, minimally-invasive removal of moles, warts and skin growths.</p>
+                <button type="button" class="learn-more" data-modal-open="mole-removal">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="skin-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/xanthelasma_.png" alt="Xanthelasma removal at Dr. Tupe's Clinic" />
+                <img loading="lazy" decoding="async" src="images/xanthelasma_.webp" alt="Xanthelasma removal at Dr. Tupe's Clinic" />
               </div>
               <div class="card-body">
                 <h3>Xanthelasma</h3>
                 <p>Removal of yellowish cholesterol deposits around the eyelids.</p>
+                <button type="button" class="learn-more" data-modal-open="xanthelasma">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/oxygeno.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/oxygeno.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>OxyGeno Facial</h3>
@@ -407,11 +419,12 @@
                   3-in-1 super facial that exfoliates dead cells, oxygenates from within, and deeply infuses active
                   nutrients
                 </p>
+                <button type="button" class="learn-more" data-modal-open="oxygeno-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/medifacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/medifacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Medi Facial</h3>
@@ -419,11 +432,12 @@
                   clinical treatment that uses medical-grade products and aesthetic technology—such as
                   microdermabrasion, LED therapy, and customized serums
                 </p>
+                <button type="button" class="learn-more" data-modal-open="medi-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/hydrafacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/hydrafacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>HydraFacial</h3>
@@ -431,11 +445,12 @@
                   non-invasive, multi-step medical facial that uses patented vortex technology to cleanse, exfoliate,
                   extract impurities, and deeply hydrate the skin
                 </p>
+                <button type="button" class="learn-more" data-modal-open="hydrafacial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/photofacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/photofacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Photo Facial</h3>
@@ -443,42 +458,46 @@
                   a non-invasive cosmetic treatment that uses Intense Pulsed Light (IPL) to target skin discoloration,
                   redness, and fine lines
                 </p>
+                <button type="button" class="learn-more" data-modal-open="photo-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/gfcfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/gfcfacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>GFC Facial</h3>
                 <p>
                   an advanced, non-surgical skin rejuvenation treatment
                 </p>
+                <button type="button" class="learn-more" data-modal-open="gfc-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/diamondfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/diamondfacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Diamond / Skin Polishing Facial</h3>
                 <p>
                   a skin-polishing and rejuvenating treatment infused with diamond dust or bhasma (ash)
                 </p>
+                <button type="button" class="learn-more" data-modal-open="diamond-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/carbon_laser_.png" alt="Carbon laser peel at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/carbon_laser_.webp" alt="Carbon laser peel at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Carbon Laser Facial/ Hollywood Facial</h3>
                 <p>Deep-cleansing "carbon peel" for pores, oil and dull skin</p>
+                <button type="button" class="learn-more" data-modal-open="carbon-laser-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/omegaletlightfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/omegaletlightfacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Omega Led Light Facial</h3>
@@ -486,11 +505,12 @@
                   a non-invasive, medical-grade LED therapy utilizing specific wavelengths (measured in nanometers) to
                   target acne, aging, and hyperpigmentation
                 </p>
+                <button type="button" class="learn-more" data-modal-open="omega-led-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/pumpkinpeelfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/pumpkinpeelfacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Pumpkin Peel Facial</h3>
@@ -498,11 +518,12 @@
                   a gentle, enzyme-based treatment that utilizes natural pumpkin pulp—rich in vitamin A, beta-carotene,
                   and zinc—to dissolve dead skin cells, unclog pores, and deeply hydrate the skin
                 </p>
+                <button type="button" class="learn-more" data-modal-open="pumpkin-peel-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/acnelaserfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/acnelaserfacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Acne laser Facial</h3>
@@ -510,56 +531,61 @@
                   combines laser or light therapy with deep cleansing to treat active breakouts, inflammation, and
                   scarring
                 </p>
+                <button type="button" class="learn-more" data-modal-open="acne-laser-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/koreanglassfacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/koreanglassfacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Korean Glass Facial</h3>
                 <p>
                   a multi-step skincare treatment inspired by K-beauty trends
                 </p>
+                <button type="button" class="learn-more" data-modal-open="korean-glass-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/mandelicpeel.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/mandelicpeel.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Mandelic Peel Facial</h3>
                 <p>
                   a gentle, alpha-hydroxy acid (AHA) treatment ideal for all skin types, including sensitive skin
                 </p>
+                <button type="button" class="learn-more" data-modal-open="mandelic-peel-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/antiaging.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/antiaging.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Radiofrequency Facial/ Anti-aging Facial</h3>
                 <p>
                   a non-invasive cosmetic treatment that uses low-frequency electromagnetic waves to heat the deep layers of the skin
                 </p>
+                <button type="button" class="learn-more" data-modal-open="rf-antiaging-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/citruspeel.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/citruspeel.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Vit. C Skin Brightening Facial/ Citrus Peel Medi Facial</h3>
                 <p>
                   a professional skin-resurfacing treatment utilizing concentrated Vitamin C and natural fruit acids (citric, lactic, or glycolic) to exfoliate dead cells, fade pigmentation, and boost collagen
                 </p>
+                <button type="button" class="learn-more" data-modal-open="vitc-citrus-peel-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
 
             <div class="card reveal" data-subcat="cosmetic-treatment">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/vampirefacial.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/vampirefacial.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Vampire Facial</h3>
@@ -567,8 +593,17 @@
                   non-invasive, multi-step medical facial that uses patented vortex technology to cleanse, exfoliate,
                   extract impurities, and deeply hydrate the skin
                 </p>
+                <button type="button" class="learn-more" data-modal-open="vampire-facial">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/medifacial.webp" alt="Fire and Ice facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Fire &amp; Ice / Red Carpet Facial</h3><p>An intensive resurfacing and soothing facial for a smoother, event-ready glow.</p><button type="button" class="learn-more" data-modal-open="fire-ice-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/omegaletlightfacial.webp" alt="Ozone high frequency facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Ozone High Frequency Facial</h3><p>High-frequency skin therapy used to support acne care, circulation and rejuvenation.</p><button type="button" class="learn-more" data-modal-open="ozone-high-frequency-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/antiaging.webp" alt="Collagen facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Collagen Facial</h3><p>A hydrating, firming facial designed to soften the appearance of fine lines.</p><button type="button" class="learn-more" data-modal-open="collagen-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/diamondfacial.webp" alt="Dermaplaning facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Dermaplaning Facial</h3><p>Controlled exfoliation that removes surface dead skin and fine facial hair.</p><button type="button" class="learn-more" data-modal-open="dermaplaning-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/carbon_laser_.webp" alt="Laser resurfacing facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Laser Resurfacing / Rejuvenating Facial</h3><p>Doctor-guided laser treatment for texture, tone and visible signs of ageing.</p><button type="button" class="learn-more" data-modal-open="laser-resurfacing-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/medifacial.webp" alt="Meso Magic facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Meso Magic Facial</h3><p>A customised infusion facial that delivers selected actives for hydration and radiance.</p><button type="button" class="learn-more" data-modal-open="meso-magic-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/diamondfacial.webp" alt="Micro derma peel facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Micro Derma Peel Facial</h3><p>Microdermabrasion and a customised peel combined for refined, brighter-looking skin.</p><button type="button" class="learn-more" data-modal-open="micro-derma-peel-facial">Learn More <span aria-hidden="true">→</span></button></div></div>
+            <div class="card reveal" data-subcat="cosmetic-treatment"><div class="card-banner has-img zoom-hover"><img src="images/citruspeel.webp" alt="Advanced skin whitening peel facial at Dr. Tupe's Clinic" loading="lazy" decoding="async" /></div><div class="card-body"><h3>Advanced Skin Whitening Peel Facial</h3><p>A dermatologist-selected brightening peel for uneven tone, tanning and pigmentation.</p><button type="button" class="learn-more" data-modal-open="advanced-skin-whitening-peel">Learn More <span aria-hidden="true">→</span></button></div></div>
           </div>
         </div>
 
@@ -576,20 +611,21 @@
           <div class="cards-grid stagger">
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/qr678.png" alt="PRP (Platelet-rich plasma) hair treatment at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/qr678.webp" alt="PRP (Platelet-rich plasma) hair treatment at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>QR 678 PREO</h3>
                 <p>
                   advanced, next-generation injectable hair-growth treatment
                 </p>
+                <button type="button" class="learn-more" data-modal-open="qr678">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/prp.png" alt="PRP (Platelet-rich plasma) hair treatment at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/prp.webp" alt="PRP (Platelet-rich plasma) hair treatment at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>PRP Therapy</h3>
@@ -597,12 +633,13 @@
                   Platelet-rich plasma treatment to reduce hair fall and boost
                   density.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="prp">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/gfc_.png" alt="GFC (Growth Factor Concentrate) hair treatment at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/gfc_.webp" alt="GFC (Growth Factor Concentrate) hair treatment at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>GFC Treatment</h3>
@@ -610,11 +647,12 @@
                   Growth Factor Concentrate — a potent, non-surgical option
                   for thinning hair.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="gfc">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/dutexome.png" alt="Laser hair reduction at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/dutexome.webp" alt="Laser hair reduction at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Dutoxome Hair Growth Therapy</h3>
@@ -622,22 +660,24 @@
                   Advanced scalp therapy that combines exosomes, dutasteride, copper peptides, and B-complex vitamins to
                   combat hair thinning and androgenetic alopecia
                 </p>
+                <button type="button" class="learn-more" data-modal-open="dutoxome">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/pdo.png" alt="Laser hair reduction at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/pdo.webp" alt="Laser hair reduction at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>PDO (polydioxanone) Threads Therapy</h3>
                 <p>
                   Ultra-fine, dissolvable medical-grade sutures inserted into the scalp to treat hair thinning
                 </p>
+                <button type="button" class="learn-more" data-modal-open="pdo">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/laser_helmet.png" alt="Laser hair reduction at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/laser_helmet.webp" alt="Laser hair reduction at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Laser Helmet for Hair Growth</h3>
@@ -645,22 +685,24 @@
                   Low-Level Laser Therapy (LLLT) scalp treatment device designed for hair loss therapy and promoting
                   hair growth
                 </p>
+                <button type="button" class="learn-more" data-modal-open="laser-helmet">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/hair_meso.png" alt="Hair mesotherapy at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/hair_meso.webp" alt="Hair mesotherapy at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Hair Mesotherapy</h3>
                 <p>
                   Nutrient micro-injections to nourish follicles directly.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="hair-mesotherapy">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/alopecia.png" alt="Alopecia areata treatment at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/alopecia.webp" alt="Alopecia areata treatment at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Alopecia Areata</h3>
@@ -668,21 +710,23 @@
                   Targeted treatment to regrow hair in patchy, autoimmune hair
                   loss.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="alopecia-areata">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/dandruff.png" alt="Dandruff and scalp treatment at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/dandruff.webp" alt="Dandruff and scalp treatment at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Dandruff &amp; Scalp Treatment</h3>
                 <p>Relief from dandruff, itching and scalp irritation.</p>
+                <button type="button" class="learn-more" data-modal-open="dandruff-scalp">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/hairloss_management.png" alt="Hair loss management at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/hairloss_management.webp" alt="Hair loss management at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Hair Loss Management</h3>
@@ -690,6 +734,7 @@
                   Long-term plans combining medicine, procedures and
                   nutrition.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="hair-loss-management">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
           </div>
@@ -699,8 +744,8 @@
           <div class="cards-grid stagger">
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/laser_hair_removal.png" alt="Laser hair reduction at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/laser_hair_removal.webp" alt="Laser hair reduction at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Laser Hair Reduction</h3>
@@ -708,86 +753,95 @@
                   Painless, effective long-term hair reduction for face and
                   body.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="laser-hair-reduction">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
 
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/excimer_l.png" alt="Excimer laser treatment at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/excimer_l.webp" alt="Excimer laser treatment at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Excimer laser</h3>
                 <p>Targeted UV phototherapy for vitiligo and psoriasis patches.</p>
+                <button type="button" class="learn-more" data-modal-open="excimer-laser">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/co2.png" alt="CO2 laser resurfacing at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/co2.webp" alt="CO2 laser resurfacing at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>CO2 Laser</h3>
                 <p>Fractional resurfacing for scars, texture and fine lines.</p>
+                <button type="button" class="learn-more" data-modal-open="co2-laser">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/hifu.png" alt="HIFU at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/hifu.webp" alt="HIFU at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
-                <h3>High Intensity Focus Ultrasound</h3>
+                <h3>High Intensity Focused Ultrasound (HIFU)</h3>
                 <p>Non-surgical ultrasound lifting and skin tightening.</p>
+                <button type="button" class="learn-more" data-modal-open="hifu">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/radio_freq.png" alt="Radio frequency skin tightening at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/radio_freq.webp" alt="Radio frequency skin tightening at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Skin Tightening by Radio Frequency</h3>
                 <p>RF energy to firm and tighten loose skin.</p>
+                <button type="button" class="learn-more" data-modal-open="rf-skin-tightening">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
 
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/freckle_Removal.png" alt="Freckles removal at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/freckle_Removal.webp" alt="Freckles removal at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Freckles Removal</h3>
                 <p>Precise laser targeting to fade freckles and sun spots.</p>
+                <button type="button" class="learn-more" data-modal-open="freckles-removal">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/Q_Switch_laser.png" alt="Q switch Laser at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/Q_Switch_laser.webp" alt="Q switch Laser at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Q switch Laser</h3>
                 <p>High-energy laser for pigmentation, tattoos and skin brightening.</p>
+                <button type="button" class="learn-more" data-modal-open="q-switch-laser">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/stretchmarks.png" alt="Stretchmarks removal at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/stretchmarks.webp" alt="Stretchmarks removal at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Stretchmarks Removal</h3>
                 <p>Laser treatment to reduce the appearance of stretch marks.</p>
+                <button type="button" class="learn-more" data-modal-open="stretchmarks-removal">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/lip.png" alt="Lip lightening at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/lip.webp" alt="Lip lightening at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Lip Lightening</h3>
                 <p>Laser treatment to reduce dark pigmentation on the lips.</p>
+                <button type="button" class="learn-more" data-modal-open="lip-lightening">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/mnrf.png" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/mnrf.webp" alt="MNRF at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>MNRF [ Microneedling with Radio Frequency]</h3>
@@ -795,18 +849,20 @@
                   Advanced, minimally invasive cosmetic procedure that triggers natural collagen production, smooths
                   acne scars, tightens loose tissue, and refines large pores with quick healing
                 </p>
+                <button type="button" class="learn-more" data-modal-open="mnrf">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
 
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/tattoo_removal.png" alt="Tattoo Removal at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/tattoo_removal.webp" alt="Tattoo Removal at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Tattoo Removal</h3>
                 <p>
                   Minimally-invasive laser removal of unwanted tattoos.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="tattoo-removal">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
           </div>
@@ -816,19 +872,20 @@
           <div class="cards-grid stagger">
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/laser_lipolysis.png" alt="Laser lipolysis at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/laser_lipolysis.webp" alt="Laser lipolysis at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Laser Lipolysis</h3>
                 <p>
                   Minimally-invasive laser fat reduction and body contouring.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="laser-lipolysis">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/weightloss.png" alt="Weight loss and diet planning at Dr. Tupe's Clinic"
-                  loading="lazy" />
+                <img src="images/weightloss.webp" alt="Weight loss and diet planning at Dr. Tupe's Clinic"
+                  loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Weight Management &amp; Diet Plans</h3>
@@ -836,48 +893,53 @@
                   Personalised nutrition guidance to support healthy, lasting
                   weight loss.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="weight-management">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/cryo.png" alt="Cryo lipolysis at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/cryo.webp" alt="Cryo lipolysis at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Cryo Lipolysis</h3>
                 <p>Fat-freezing technology to reduce stubborn fat pockets.</p>
+                <button type="button" class="learn-more" data-modal-open="cryo-lipolysis">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/ems.png" alt="EMS Sculpt at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/ems.webp" alt="EMS Sculpt at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>EMS Sculpt</h3>
                 <p>Electromagnetic muscle stimulation to build tone and definition.</p>
+                <button type="button" class="learn-more" data-modal-open="ems-sculpt">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/sauna_belt.png" alt="Sauna belt at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/sauna_belt.webp" alt="Sauna belt at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Sauna Belt </h3>
                 <p>Targeted heat therapy to support fat loss and circulation.</p>
+                <button type="button" class="learn-more" data-modal-open="sauna-belt">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/ems_.png" alt="Electronic muscle stimulation at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/ems_.webp" alt="Electronic muscle stimulation at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Electronic Muscle Simulation</h3>
                 <p>EMS therapy to tone and strengthen muscles.</p>
+                <button type="button" class="learn-more" data-modal-open="electronic-muscle-stimulation">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
 
             <div class="card reveal">
               <div class="card-banner has-img zoom-hover">
-                <img src="images/bodycontouring.png" alt="Body contouring at Dr. Tupe's Clinic" loading="lazy" />
+                <img src="images/bodycontouring.webp" alt="Body contouring at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
               </div>
               <div class="card-body">
                 <h3>Body Contouring</h3>
@@ -885,6 +947,7 @@
                   Targeted body-shaping treatments alongside lifestyle
                   guidance.
                 </p>
+                <button type="button" class="learn-more" data-modal-open="body-contouring">Learn More <span aria-hidden="true">→</span></button>
               </div>
             </div>
           </div>
@@ -953,7 +1016,8 @@
           </div>
         </div>
 
-        <div class="testi-grid stagger">
+        <div class="testi-carousel" aria-roledescription="carousel" aria-label="Patient testimonials">
+          <div class="testi-grid stagger" id="testimonialTrack" aria-live="off">
           <!-- Shaji Kutty -->
           <figure class="testi-card reveal">
             <div class="testi-card-top">
@@ -1102,6 +1166,12 @@
               </span>
             </figcaption>
           </figure>
+          </div>
+          <div class="testi-controls">
+            <button class="testi-control" id="testiPrev" type="button" aria-label="Previous testimonial">&#8592;</button>
+            <div class="testi-dots" id="testiDots" aria-label="Choose testimonial"></div>
+            <button class="testi-control" id="testiNext" type="button" aria-label="Next testimonial">&#8594;</button>
+          </div>
         </div>
 
         <div class="testimonials-footer">
@@ -1131,10 +1201,10 @@
         <div class="faq-list" id="faqList">
           <div class="faq-item open">
             <div class="faq-q">
-              <span data-i18n="faq_q1">What are the consultation fees?</span><span class="plus">+</span>
+              <span data-i18n="faq_q0">What are the consultation fees?</span><span class="plus">+</span>
             </div>
             <div class="faq-a">
-              <p data-i18n="faq_a1">
+              <p data-i18n="faq_a0">
                 The initial consultation fee is ₹500. Follow-up consultations are charged at ₹300.
               </p>
             </div>
@@ -1198,14 +1268,14 @@
           🚶 Walk-ins welcome — no appointment necessary
         </div>
         <div class="services-head contact-head reveal">
-          <div class="eyebrow">Visit Either of Our Clinics</div>
-          <h2>We'd love to see you.</h2>
+          <div class="eyebrow" data-i18n="contact_eyebrow">Visit Either of Our Clinics</div>
+          <h2 data-i18n="contact_title">We'd love to see you.</h2>
         </div>
 
         <div class="clinics-contact-grid stagger">
           <!-- CLINIC 1 -->
           <div class="clinic-block reveal">
-            <h3 class="clinic-block-title">Clinic 1 — Dr. Pratima Tupe</h3>
+            <h3 class="clinic-block-title" data-i18n="clinic1_title">Clinic 1 — Dr. Pratima Tupe</h3>
             <div class="info-row">
               <div class="ic">📍</div>
               <div>
@@ -1259,8 +1329,8 @@
             </div>
 
             <div class="map-embed" style="margin-top: 24px">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.9882369605434!2d72.9385235149023!3d19.15199218704437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b969a1cba12d%3A0x16cf2d59bd468ff6!2sDr%20Tupe%20Skin%20and%20Hair%20Clinic!5e0!3m2!1sen!2sin!4v1681478226374!5m2!1sen!2sin"
+              <iframe title="Map showing Dr. Tupe Skin and Hair Clinic"
+                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.9882369605434!2d72.9385235149023!3d19.15199218704437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b969a1cba12d%3A0x16cf2d59bd468ff6!2sDr%20Tupe%20Skin%20and%20Hair%20Clinic!5e0!3m2!1sen!2sin!4v1681478226374!5m2!1sen!2sin"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <a href="https://www.google.com/maps?q=Dr+Tupe+Skin+and+Hair+Clinic,19.15199218704437,72.9385235149023"
@@ -1270,7 +1340,7 @@
 
           <!-- CLINIC 2 -->
           <div class="clinic-block reveal">
-            <h3 class="clinic-block-title">Clinic 2 — Dr. Sambhaji Tupe</h3>
+            <h3 class="clinic-block-title" data-i18n="clinic2_title">Clinic 2 — Dr. Sambhaji Tupe</h3>
             <div class="info-row">
               <div class="ic">📍</div>
               <div>
@@ -1325,8 +1395,8 @@
             </div>
 
             <div class="map-embed" style="margin-top: 24px">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.985979916174!2d72.93965657698804!3d19.152090982068252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9df2fa19db3%3A0x53adcb2afce3a6d5!2sDr%20Sambhaji%20Tupe!5e0!3m2!1sen!2sin!4v1786349840804!5m2!1sen!2sin"
+              <iframe title="Map showing Dr. Sambhaji Tupe clinic"
+                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.985979916174!2d72.93965657698804!3d19.152090982068252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9df2fa19db3%3A0x53adcb2afce3a6d5!2sDr%20Sambhaji%20Tupe!5e0!3m2!1sen!2sin!4v1786349840804!5m2!1sen!2sin"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               <!-- <iframe src="https://maps.google.com/maps?q=Dr+Sambhaji+Tupe,19.152091,72.9422315&z=17&output=embed"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
@@ -1342,7 +1412,7 @@
   <footer>
     <div class="wrap">
       <div>
-        <a href="#home" class="brand"><img class="brand-mark" src="images/logo.png"
+        <a href="#home" class="brand"><img loading="lazy" decoding="async" class="brand-mark" src="images/logo.webp"
             alt="Dr. Tupe's Aesthetic Clinic logo" /><span>Dr. Tupe's Skin &amp; Hair
             Clinic<small>Bhandup West, Mumbai</small></span></a>
         <p data-i18n="footer_tagline" style="margin-top: 14px">
@@ -1354,22 +1424,18 @@
         <div class="eyebrow" style="color: #e8d5a0" data-i18n="footer_follow">
           Find Us Online
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px">
+        <div class="social-links">
           <a href="https://www.instagram.com/dr_tupe_skin_and_hair_clinic/" target="_blank" rel="noopener"
-            class="btn btn-outline" style="border-color: rgba(255, 255, 255, 0.3); color: #fff">Instagram</a>
-          <a href="https://www.youtube.com/@DrPratimaTupe" target="_blank" rel="noopener" class="btn btn-outline"
-            style="border-color: rgba(255, 255, 255, 0.3); color: #fff">YouTube</a>
-          <a href="https://www.facebook.com/668119830280597/" target="_blank" rel="noopener" class="btn btn-outline"
-            style="border-color: rgba(255, 255, 255, 0.3); color: #fff">Facebook</a>
+            class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/@DrPratimaTupe" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8s-.2-1.5-.8-2.2C19.5 5 18.6 5 18.2 5 15.7 4.8 12 4.8 12 4.8s-3.7 0-6.2.2c-.4 0-1.3 0-2 .8C3.2 6.5 3 8 3 8s-.2 1.8-.2 3.5V13c0 1.7.2 3.5.2 3.5s.2 1.5.8 2.2c.7.8 1.7.8 2.1.9 1.5.1 6.1.2 6.1.2s3.7 0 6.2-.2c.4-.1 1.3-.1 2-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.5v-1.5C21.2 9.8 21 8 21 8Z"/><path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/668119830280597/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.7.3-1 1-1Z" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.justdial.com/Mumbai/Dr-Tupes-Skin-and-Hair-Clinic-Opposite-D-Bazaar-Bhandup-West/022PXX22-XX22-140115201600-D5M7_BZDET"
-            target="_blank" rel="noopener" class="btn btn-outline"
-            style="border-color: rgba(255, 255, 255, 0.3); color: #fff">Justdial</a>
+            target="_blank" rel="noopener" class="social-link social-letter" aria-label="Justdial">JD</a>
           <a href="https://www.linkedin.com/in/dr-pratima-tupe-54049b219/" target="_blank" rel="noopener"
+            class="social-link social-letter" aria-label="LinkedIn">in</a>
+          <!-- <a href="https://www.google.com/maps?q=19.15199218704437,72.9385235149023" target="_blank" rel="noopener"
             class="btn btn-outline" style="border-color: rgba(255, 255, 255, 0.3); color: #fff"
-            data-i18n="contact_view_maps">LinkedIn</a>
-          <a href="https://www.google.com/maps?q=19.15199218704437,72.9385235149023" target="_blank" rel="noopener"
-            class="btn btn-outline" style="border-color: rgba(255, 255, 255, 0.3); color: #fff"
-            data-i18n="contact_view_maps">📍 Google Maps</a>
+            data-i18n="contact_view_maps">📍 Google Maps</a> -->
         </div>
       </div>
     </div>
@@ -1379,7 +1445,11 @@
     </div>
   </footer>
 
-  <script src="index.js"></script>
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <!-- Treatment detail modal content is rendered dynamically from TREATMENT_INFO in index.js -->
+
+  <script src="index.js" defer></script>
 </body>
 
 </html>

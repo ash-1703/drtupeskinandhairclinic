@@ -28,28 +28,29 @@
   <header>
     <div class="nav">
       <a href="index.html#home" class="brand">
-        <img class="brand-mark" src="images/logo.png" alt="Dr. Tupe's Aesthetic Clinic logo" />
+        <img loading="eager" decoding="async" class="brand-mark" src="images/logo.webp" alt="Dr. Tupe's Aesthetic Clinic logo" />
         <span>
           <span class="brand-full">Dr. Tupe's Skin &amp; Hair Clinic</span>
           <span class="brand-short">Dr Tupe's</span>
-          <small>Bhandup West, Mumbai</small>
+          <small data-i18n="brand_sub">Bhandup West, Mumbai</small>
         </span>
       </a>
       <nav class="links" id="navLinks">
-        <a href="index.html#doctors">About Us</a>
+        <a href="index.html#doctors" data-i18n="nav_about">About Us</a>
         <div class="nav-item-dropdown">
-          <a href="index.html#services">Services</a>
+          <a href="index.html#services" data-i18n="nav_services">Services</a>
           <div class="dropdown-menu">
             <a href="index.html#services-skin-treatment" data-tab-link="skin" data-subtab-link="skin-treatment">Skin Treatment</a>
             <a href="index.html#services-cosmetic-treatment" data-tab-link="skin" data-subtab-link="cosmetic-treatment">Cosmetic Treatment</a>
-            <a href="index.html#services-hair" data-tab-link="hair">Hair</a>
-            <a href="index.html#services-laser" data-tab-link="laser">Laser</a>
-            <a href="index.html#services-slim" data-tab-link="slim">Slimming</a>
+            <a href="index.html#services-hair" data-tab-link="hair" data-i18n="tab_hair">Hair</a>
+            <a href="index.html#services-laser" data-tab-link="laser" data-i18n="tab_laser">Laser</a>
+            <a href="index.html#services-slim" data-tab-link="slim" data-i18n="tab_slim">Slimming</a>
           </div>
         </div>
-        <a href="gallery.html" style="color: var(--pine); font-weight: 700">Gallery</a>
-        <a href="index.html#testimonials">Testimonials</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="gallery.html" style="color: var(--pine); font-weight: 700" data-i18n="nav_gallery">Gallery</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
+        <a href="index.html#testimonials" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="nav-actions">
         <div class="lang-toggle" id="langToggle">
@@ -57,7 +58,7 @@
           <button data-lang="hi">हिं</button>
           <button data-lang="mr">मर</button>
         </div>
-        <a href="tel:+919769657185" class="btn btn-outline"><span class="long">Call</span> 📞</a>
+        <a href="tel:+919769657185" class="btn btn-outline"><span class="long" data-i18n="nav_call">Call</span> 📞</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">
           ☰
         </button>
@@ -70,9 +71,9 @@
     <section class="hero" id="home" style="padding-bottom: 40px">
       <div class="wrap hero-grid hero-grid-single">
         <div class="reveal">
-          <div class="eyebrow">Gallery</div>
-          <h1>See the space, the treatments, and real results.</h1>
-          <p class="sub">
+          <div class="eyebrow" data-i18n="gallery_hero_eyebrow">Gallery</div>
+          <h1 data-i18n="gallery_hero_title">See the space, the treatments, and real results.</h1>
+          <p class="sub" data-i18n="gallery_hero_sub">
             A closer look at our clinic, our team at work, and the latest
             photos &amp; videos from Instagram — ozone therapy, carbon laser
             and more.
@@ -85,9 +86,9 @@
     <section id="instagram-feed" style="background: var(--bg-alt)">
       <div class="wrap">
         <div class="services-head reveal">
-          <div class="eyebrow">Live from Instagram</div>
-          <h2>Straight from our feed.</h2>
-          <p>
+          <div class="eyebrow" data-i18n="gallery_insta_eyebrow">Live from Instagram</div>
+          <h2 data-i18n="gallery_insta_title">Straight from our feed.</h2>
+          <p data-i18n="gallery_insta_intro">
             Follow
             <a href="https://www.instagram.com/dr_tupe_skin_and_hair_clinic/" target="_blank" rel="noopener"
               style="color: var(--pine); font-weight: 600">@dr_tupe_skin_and_hair_clinic</a>
@@ -104,39 +105,39 @@
     <section id="gallery">
       <div class="wrap">
         <div class="services-head reveal">
-          <div class="eyebrow">Inside the Clinic</div>
-          <h2>A look at our space.</h2>
+          <div class="eyebrow" data-i18n="gallery_space_eyebrow">Inside the Clinic</div>
+          <h2 data-i18n="gallery_space_title">A look at our space.</h2>
         </div>
         <div class="carousel reveal" id="clinicCarousel">
           <div class="carousel-track">
             <div class="carousel-slide is-active">
-              <img src="images/clinicreception.png"
-                alt="Dr. Tupe's Skin &amp; Hair Clinic reception, Bhandup West, Mumbai" loading="lazy" />
+              <img src="images/clinicreception.webp"
+                alt="Dr. Tupe's Skin &amp; Hair Clinic reception, Bhandup West, Mumbai" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/treatmentroom.png" alt="Treatment room at Dr. Tupe's Clinic" loading="lazy" />
+              <img src="images/treatmentroom.webp" alt="Treatment room at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/clinic_.png" alt="Inside Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" />
+              <img src="images/clinic_.webp" alt="Inside Dr. Tupe's Skin &amp; Hair Clinic" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/with_patient_.png" alt="Dr. Tupe with a patient" loading="lazy" />
+              <img src="images/with_patient_.webp" alt="Dr. Tupe with a patient" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/treatment_room.png" alt="Laser equipment at Dr. Tupe's Clinic" loading="lazy" />
+              <img src="images/treatment_room.webp" alt="Laser equipment at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/clinic1_.png" alt="Dr. Tupe's Clinic interior" loading="lazy" />
+              <img src="images/clinic1_.webp" alt="Dr. Tupe's Clinic interior" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/consultationarea.png" alt="Consultation area at Dr. Tupe's Clinic" loading="lazy" />
+              <img src="images/consultationarea.webp" alt="Consultation area at Dr. Tupe's Clinic" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
-              <img src="images/clinic2.png" alt="Dr. Tupe's Clinic space" loading="lazy" />
+              <img src="images/clinic2.webp" alt="Dr. Tupe's Clinic space" loading="lazy" decoding="async" />
             </div>
             <div class="carousel-slide">
               <img src="images/clinic-exterior.webp"
-                alt="Dr. Tupe's Skin, Hair &amp; Laser Clinic exterior, Bhandup West, Mumbai" loading="lazy" />
+                alt="Dr. Tupe's Skin, Hair &amp; Laser Clinic exterior, Bhandup West, Mumbai" loading="lazy" decoding="async" />
             </div>
           </div>
           <button class="carousel-arrow carousel-prev" aria-label="Previous photo">‹</button>
@@ -160,15 +161,15 @@
   <footer>
     <div class="wrap">
       <div>
-        <a href="index.html#home" class="brand"><img class="brand-mark" src="images/logo.png" alt="Dr. Tupe's Aesthetic Clinic logo" /><span>Dr. Tupe's Skin &amp; Hair
+        <a href="index.html#home" class="brand"><img loading="lazy" decoding="async" class="brand-mark" src="images/logo.webp" alt="Dr. Tupe's Aesthetic Clinic logo" /><span>Dr. Tupe's Skin &amp; Hair
             Clinic<small>Bhandup West, Mumbai</small></span></a>
-        <p style="margin-top: 14px">
+        <p style="margin-top: 14px" data-i18n="footer_tagline">
           Comprehensive skin, hair, laser and slimming care — from a doctor
           who treats the root cause.
         </p>
       </div>
       <div>
-        <div class="eyebrow" style="color: #e8d5a0">Find Us Online</div>
+        <div class="eyebrow" style="color: #e8d5a0" data-i18n="footer_follow">Find Us Online</div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px">
           <a href="https://www.instagram.com/dr_tupe_skin_and_hair_clinic/" target="_blank" rel="noopener"
             class="btn btn-outline" style="border-color: rgba(255, 255, 255, 0.3); color: #fff">Instagram</a>
@@ -187,11 +188,11 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Dr. Tupe's Skin &amp; Hair Clinic. All rights reserved.</span>
+      <span data-i18n="footer_rights">© 2026 Dr. Tupe's Skin &amp; Hair Clinic. All rights reserved.</span>
     </div>
   </footer>
 
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
   <script src="https://elfsightcdn.com/platform.js" async></script>
 </body>
 
